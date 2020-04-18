@@ -58,7 +58,9 @@ public class War {
                    if(x==1){
                        Deck1.add(Deck2.get(0));
                        Deck1.add(Deck1.get(0));
-                       
+                       Deck1.remove(0);
+                       Deck2.remove(0);
+                       roundwinner = player1;
                }
               
             }
