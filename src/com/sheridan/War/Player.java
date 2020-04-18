@@ -21,17 +21,17 @@ public class Player {
     }
     
     public void addCardToMain(Card card) {
-        if (mMainDeck.contains(card)) {
-            throw new IllegalArgumentException("card is already in the main deck");
-        }
+//        if (mMainDeck.contains(card)) {
+//            throw new IllegalArgumentException("card is already in the main deck");
+//        }
         
         mMainDeck.addCard(card);
     }
     
     public void addCardToCaptured(Card card) {
-        if (mCapturedDeck.contains(card)) {
-            throw new IllegalArgumentException("card is already in the captured deck");
-        }
+//        if (mCapturedDeck.contains(card)) {
+//            throw new IllegalArgumentException("card is already in the captured deck");
+//        }
         
         mCapturedDeck.addCard(card);
     }
