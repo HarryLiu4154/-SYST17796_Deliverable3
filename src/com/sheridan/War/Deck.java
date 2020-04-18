@@ -7,6 +7,7 @@ package com.sheridan.War;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Deck {
     private ArrayList <Card> shuffled = new ArrayList<Card>(52);
     String suit="";
     String rank ="";
+    Random random = new Random();
     /**
      * default constructor
      */
@@ -106,14 +108,24 @@ public class Deck {
                 }
             }
         }
+        
         return cards;
     }
     /**
      * randomly shuffles the deck of cards
      */
-    public void shuffle() {
-        Collections.shuffle(mCards);
-        
+    public void shuffle(int x) {
+       // Collections.shuffle(mCards);
+      ArrayList<Integer>usedNums = new ArrayList<>(52);
+      int counter =0;
+      while(counter<52){
+          int cardnum = random.nextInt((51-0)+1)+0;
+          while(usedNums.indexOf(cardnum)==-1){
+              usedNums.add(counter, cardnum);
+              shuffled.add(counter,cards.get(cardnum));
+              counter++;
+          }
+      }
         // USE THE BELOW CODE INSTEAD TO TEST THE RANDOM SHUFFLING USING A SEED
         // Collections.shuffle(mCards, new Random(5));
     }
