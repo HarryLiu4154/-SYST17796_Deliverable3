@@ -14,7 +14,10 @@ import java.util.Collections;
  */
 public class Deck {
     private ArrayList<Card> mCards = new ArrayList();
-    
+     private ArrayList <Card> cards = new ArrayList<Card>(52);
+    private ArrayList <Card> shuffled = new ArrayList<Card>(52);
+    String suit="";
+    String rank ="";
     /**
      * default constructor
      */
@@ -46,7 +49,65 @@ public class Deck {
         
         return drawnCard;
     }
-    
+     public ArrayList<Card> showCards()
+    {
+        for (int i = 0; i < 4; i++) {
+            
+            if(i==0){
+                suit= "Clubs";
+            }
+            else if(i==1){
+                suit= "Hearts";
+            }
+            else if(i==2){
+                suit= "Spades";
+            }else if (i==3){
+                suit = "Diamonds";
+            }
+            for (int j = 0; j < 13; j++) {
+                if(j==1){
+                    rank = "rank";
+                }
+                else if(j==2){
+                    rank = "two";
+                }
+                else if(j==3){
+                    rank = "Three";
+                }
+                else if(j==4){
+                    rank = "four";
+                }
+                else if(j==5){
+                    rank = "five";
+                }
+                else if(j==6){
+                    rank = "six";
+                }
+                else if(j==7){
+                    rank = "seven";
+                }
+                else if(j==8){
+                    rank = "eight";
+                }
+                else if(j==9){
+                    rank = "nine";
+                }
+                else if(j==10){
+                    rank = "ten";
+                }
+                else if(j==11){
+                    rank = "Jack";
+                }
+                else if(j==12){
+                    rank = "King";
+                }
+                else if(j==13){
+                    rank = "Queen";
+                }
+            }
+        }
+        return cards;
+    }
     /**
      * randomly shuffles the deck of cards
      */
