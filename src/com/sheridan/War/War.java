@@ -40,6 +40,13 @@ public class War {
             
             ArrayList<Card> Deck1 = new ArrayList<>();
             ArrayList<Card> Deck2 = new ArrayList<>();
+            ArrayList<Card> warDeck = new ArrayList<>();
+            
+            System.out.println("Welcome to WAR! lets play\n");
+            System.out.println("Enter the first player name");
+            player1 = input.nextLine();
+            System.out.println("Enter second player name");
+            player2= input.nextLine();
             
         }
     }
