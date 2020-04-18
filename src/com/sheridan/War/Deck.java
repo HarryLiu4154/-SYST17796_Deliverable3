@@ -10,7 +10,7 @@ import java.util.Collections;
 
 /**
  *
- * @author lishengh
+ * @author
  */
 public class Deck {
     private ArrayList<Card> mCards = new ArrayList();
@@ -19,7 +19,7 @@ public class Deck {
      * default constructor
      */
     public Deck() {
-        
+   //   default constructor    
     }
     
     /**
@@ -53,8 +53,7 @@ public class Deck {
     public void shuffle() {
         Collections.shuffle(mCards);
         
-        // USE THE BELOW CODE INSTEAD TO TEST THE RANDOM SHUFFLING USING A SEED
-        // Collections.shuffle(mCards, new Random(5));
+        
     }
     
     /**
