@@ -47,6 +47,13 @@ public class War {
             player1 = input.nextLine();
             System.out.println("Enter second player name");
             player2= input.nextLine();
+            System.out.println("The players are " +player1 +"\t" +player2);
+            
+            while(!winner){
+               System.out.print(Deck1.get(0) + " \t" + 
+                       Deck1.size() + "\t\t" + Deck2.get(0) + " \t" + 
+                       Deck2.size() + "\t\t");  
+            }
             
         }
     }
