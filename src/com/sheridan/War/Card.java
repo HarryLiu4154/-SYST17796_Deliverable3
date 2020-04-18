@@ -87,4 +87,10 @@ public class Card implements Comparable<Card>{
         hash = 37 * hash + Objects.hashCode(this.mRank);
         return hash;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" + "mSuit=" + mSuit + ", mRank=" + mRank + '}';
+    }
+    
 }
