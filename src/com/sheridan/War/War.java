@@ -68,7 +68,12 @@ public class War {
                     Deck1.remove(0);
                     roundwinner = player2;
                 }
-
+                if(x==3){
+                    roundwinner="WAR";
+                    System.out.println(roundwinner);
+                    
+                    
+                }
             }
 
         }
