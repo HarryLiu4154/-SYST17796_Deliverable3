@@ -52,7 +52,15 @@ public class War {
             while(!winner){
                System.out.print(Deck1.get(0) + " \t" + 
                        Deck1.size() + "\t\t" + Deck2.get(0) + " \t" + 
-                       Deck2.size() + "\t\t");  
+                       Deck2.size() + "\t\t");
+               
+               int x = Deck1.get(0).isGreater(Deck2.get(0));
+                   if(x==1){
+                       Deck1.add(Deck2.get(0));
+                       Deck1.add(Deck1.get(0));
+                       
+               }
+              
             }
             
         }
