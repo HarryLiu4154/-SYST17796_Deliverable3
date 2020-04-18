@@ -71,8 +71,16 @@ public class War {
                 if(x==3){
                     roundwinner="WAR";
                     System.out.println(roundwinner);
-                    
-                    
+                    System.out.print(Deck1.get(0) + " \t"
+                        + Deck1.size() + "\t\t" + Deck2.get(0) + " \t"
+                        + Deck2.size() + "\t\t");
+                    if(Deck1.size()<=4){
+                        roundwinner = player2;
+                        System.out.println(roundwinner);
+                        System.out.println("Game finsihed");
+                        gamewinner = player2;
+                        
+                    }
                 }
             }
 
