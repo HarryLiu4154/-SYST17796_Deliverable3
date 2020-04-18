@@ -10,6 +10,7 @@
 
 package com.sheridan.War;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -36,6 +37,10 @@ public class War {
             winner= false;
             Deck deck = new Deck();
             deck.shuffle(play);
+            
+            ArrayList<Card> Deck1 = new ArrayList<>();
+            ArrayList<Card> Deck2 = new ArrayList<>();
+            
         }
     }
 
