@@ -10,14 +10,28 @@ package com.sheridan.War;
  * @author Harry
  */
 public class Player {
-    private Deck mMainDeck = new Deck();
-    private Deck mCapturedDeck = new Deck();
+    private String mName;
+    private Deck mMainDeck;
+    private Deck mCapturedDeck;
     
     /**
      * default public constructor
      */
-    public Player() {
-        
+    public Player(String name) {
+        if (name.isBlank() || name == null) {
+            throw new IllegalArgumentException("Player name cannot be blank or null.");
+        }
+        mName = name;
+        mMainDeck = new Deck();
+        mCapturedDeck = new Deck();
+    }
+    
+    /**
+     * accessor for the name attribute of a player
+     * @return the name of the player
+     */
+    public String getName() {
+        return mName;
     }
     
     public void addCardToMain(Card card) {
@@ -36,11 +50,21 @@ public class Player {
         mCapturedDeck.addCard(card);
     }
     
-    public Card drawTopCard() {
-        return mMainDeck.drawTopCard();
+    public void addDeckToCaptured(Deck deck) {
+        mCapturedDeck.addDeck(deck);
     }
     
-    public void shuffleCapturedCards() {
-        mCapturedDeck.shuffle();
+    public Card drawTopCard() {
+        if (mMainDeck.getDeckSize() < 1 && mCapturedDeck.getDeckSize() < 1) {
+            throw new IllegalArgumentException(mName + " has no more cards!");
+        }
+        else if (mMainDeck.getDeckSize() < 1) {
+            mCapturedDeck.shuffle();
+            
+            mMainDeck.addDeck(mCapturedDeck);
+            mCapturedDeck = new Deck();
+        }
+        
+        return mMainDeck.drawTopCard();
     }
 }

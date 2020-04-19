@@ -13,13 +13,13 @@ import java.util.Collections;
  * @author lishengh
  */
 public class Deck {
-    private ArrayList<Card> mCards = new ArrayList();
+    private ArrayList<Card> mCards;
     
     /**
      * default constructor
      */
     public Deck() {
-        
+        mCards = new ArrayList<>();
     }
     
     /**
@@ -36,11 +36,25 @@ public class Deck {
     }
     
     /**
+     * adds deep copies of the Cards from the input deck to this deck
+     * @param d the input deck
+     */
+    public void addDeck(Deck d) {
+        for (Card c : d.mCards) {
+            this.addCard(new Card(c));
+        }
+    }
+    
+    /**
      * removes a card from the "top" of the deck (last in the mCards array), and 
      * then returns a copy of the card
      * @return the copy of the top card
      */
     public Card drawTopCard() {
+        if (mCards.size() < 1) {
+            throw new IndexOutOfBoundsException("no more cards to be drawn");
+        }
+        
         Card drawnCard = new Card(mCards.get(mCards.size() - 1));
         mCards.remove(mCards.size() - 1);
         
@@ -58,11 +72,23 @@ public class Deck {
     }
     
     /**
+     * method to get the number of card in the deck
+     * @return the numer of cards
+     */
+    public int getDeckSize() {
+        return mCards.size();
+    }
+    
+    /**
      * returns a boolean for whether or not the deck is currently empty, this is 
      * very important for war
      * @return true if the deck is empty, false otherwise 
      */
     public boolean isEmpty() {
         return mCards.isEmpty();
+    }
+    
+    public boolean contains(Card c) {
+        return mCards.contains(c);
     }
 }

@@ -6,12 +6,22 @@
 package com.sheridan.War;
 
 /**
- *
- * @author Harry
+ * enums representing the four suits of standard playing cards
+ * @author lishengh
  */
 public enum Suits {
-    SPADES,
-    HEARTS,
-    CLUBS,
-    DIAMONDS
+    SPADES("Spades"),
+    HEARTS("Hearts"),
+    CLUBS("Clubs"),
+    DIAMONDS("Diamonds");
+    
+    private String mDisplayName;
+    
+    private Suits(String displayName) {
+        mDisplayName = displayName;
+    }
+    
+    public String getDisplayName() {
+        return mDisplayName;
+    }
 }
