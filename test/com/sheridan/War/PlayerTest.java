@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author Asra
  */
 public class PlayerTest {
-
+    
     public PlayerTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
     }
-
+    
     @After
     public void tearDown() {
     }
@@ -47,21 +47,19 @@ public class PlayerTest {
         String expResult = "asra";
         String result = instance.getName();
         assertEquals(expResult, result);
-
+        
     }
-
     
-  
-    @Test (expected =Exception.class)
+    @Test(expected = Exception.class)
     public void testGetNamebad() {
         System.out.println("getName");
         Player instance = new Player(" ");
         String expResult = " ";
         String result = instance.getName();
         assertEquals(expResult, result);
-
+        
     }
-
+    
     @Test
     public void testGetNameboundary() {
         System.out.println("getName");
@@ -69,7 +67,7 @@ public class PlayerTest {
         String expResult = "a";
         String result = instance.getName();
         assertEquals(expResult, result);
-
+        
     }
 
     /**
@@ -82,38 +80,47 @@ public class PlayerTest {
         Player instance = new Player("asra");
         instance.addCardToMain(card);
 
+        
     }
     
-      public void testAddCardToMainbad() {
+    public void testAddCardToMainbad() {
         System.out.println("addCardToMain");
         Card card = new Card(Suits.CLUBS, Ranks.ACE_HIGH);
         Player instance = new Player("a");
         instance.addCardToMain(card);
-
+        
+    }
     
-}
-
     public void testAddDeckToCaptured() {
         System.out.println("addDeckToCaptured");
         Deck deck = new Deck();
         Player instance = new Player("asrakhan");
         instance.addDeckToCaptured(deck);
-       
-
+        
     }
 
     /**
      * Test of drawTopCard method, of class Player.
      */
-    @Test (expected =Exception.class)
+    @Test
     public void testDrawTopCard() {
+        System.out.println("drawTopCard");
+        Player instance = new Player("asra khan");
+        Card expResult = new Card(Suits.CLUBS, Ranks.TWO);
+        instance.addCardToMain(new Card(Suits.CLUBS, Ranks.TWO));
+        Card result = instance.drawTopCard();
+        assertEquals(expResult, result);
+        
+    }
+    
+    @Test (expected = Exception.class)
+    public void testDrawTopCardbad() {
         System.out.println("drawTopCard");
         Player instance = new Player("asra khan");
         Card expResult = new Card(Suits.CLUBS, Ranks.TWO);
         Card result = instance.drawTopCard();
         assertEquals(expResult, result);
         
-
     }
-
+    
 }
