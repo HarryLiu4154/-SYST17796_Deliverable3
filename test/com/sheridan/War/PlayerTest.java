@@ -79,7 +79,7 @@ public class PlayerTest {
     public void testAddCardToMain() {
         System.out.println("addCardToMain");
         Card card = new Card(Suits.CLUBS, Ranks.ACE_HIGH);
-        Player instance = new Player("a");
+        Player instance = new Player("asra");
         instance.addCardToMain(card);
 
     }
